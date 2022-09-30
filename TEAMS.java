@@ -39,7 +39,44 @@ public class TEAMS{
         int ans = 0;
 
         while(ans != -1){
-            System.out.println("1. ");
+            System.out.println("options:");
+
+            if(ans== 1){
+                System.out.println("1: Add student");
+
+            }
+            if(ans==2){
+                System.out.println("2: Add Teacher");
+            }
+
+            if(ans==3){
+                System.out.println("3. Add Course");
+
+            }
+
+            if(ans==4){
+                System.out.println("4: Edit Student");
+
+            }
+
+            if(ans == 5){
+                System.out.println("5: List Students" );
+
+            }
+
+            if(ans==6){
+                System.out.println("6: List Courses");
+
+            }
+
+            if(ans ==7){
+                System.out.println("7: Search for student");
+            }
+
+            if(ans==8){
+                System.out.println("8: Exit");
+            }
+
         }
         
 
@@ -75,4 +112,6 @@ public class TEAMS{
         fis.close();
         return o;
     }
+
+
 }
