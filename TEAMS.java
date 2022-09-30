@@ -40,45 +40,61 @@ public class TEAMS{
 
         while(ans != -1){
             System.out.println("options:");
+            System.out.println("1: Add student");
+            System.out.println("2: Add Teacher");
+            System.out.println("3. Add Course");
+            System.out.println("4: Edit Student");
+            System.out.println("5: List Students" );
+            System.out.println("6: List Courses");
+            System.out.println("7: Search for sostudent");
+            System.out.println("8: Exit");
+            System.out.println();
+            System.out.println("Choice: ");
+            ans = sc.nextInt();
+            sc.nextLine();
 
+        
             if(ans== 1){
-                System.out.println("1: Add student");
-
+                addStudent();
             }
             if(ans==2){
-                System.out.println("2: Add Teacher");
+                
             }
 
             if(ans==3){
-                System.out.println("3. Add Course");
+                
 
             }
 
             if(ans==4){
-                System.out.println("4: Edit Student");
+                
 
             }
 
             if(ans == 5){
-                System.out.println("5: List Students" );
+                
 
             }
 
             if(ans==6){
-                System.out.println("6: List Courses");
+                
 
             }
 
             if(ans ==7){
-                System.out.println("7: Search for student");
+                
             }
 
             if(ans==8){
-                System.out.println("8: Exit");
+                
             }
 
         }
         
+
+    }
+
+    public static void addStudent(){
 
     }
 
