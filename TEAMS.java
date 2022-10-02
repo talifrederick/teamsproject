@@ -56,18 +56,22 @@ public class TEAMS{
         
             if(ans== 1){
                 addStudent();
+                
             }
             if(ans==2){
+                addTeacher();
                 
             }
 
             if(ans==3){
+                addCourse();
                 
 
             }
 
             if(ans==4){
                 
+        
 
             }
 
