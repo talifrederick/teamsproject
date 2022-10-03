@@ -5,13 +5,13 @@ public class Student implements Serializable {
     private String name;
     private int gradeLevel;
     private double GPA;
-    private ArrayList courses;
+    private ArrayList <Course> courses;
     //private String favoriteTeacher;
 
-    public Student(String name, int grade, ArrayList courses){
+    public Student(String name, int grade){
         this.name = name;
         gradeLevel = grade;
-        this.courses = courses;
+        courses = new ArrayList<>();
 
     }
    public void setName(String studentName){
@@ -33,36 +33,28 @@ public class Student implements Serializable {
     }
 
     public double calculateGPA(){
-        return (double)(s1.getGrade()) 
-    }
+        int gpaPoints = 0;
 
-    public void addCourse(ans){
-        System.out.println("Pick a class");
-        listCourses();
-        System.out.println("Choice:");
-        ans = sc.nextInt();
-        sc.nextLine();
-        if (ans> -1 && ans < courses.size()){
-            Course c = courses.get(ans).clone();
-            System.out.println("Enter grade for the course:");
-            int grade = sc.nextInt();
-            c.setGrade(grade);
-            sc.nextLine();
-            System.out.println("Currently taking it (y/n)?");
-            String yesNo = sc.nextLine();
-            if (yesNo.equals("y")){
-                c.setCurrent(current:true);
+
+        for(int index =0 ; index < courses.size(); index++){
+            System.out.println(courses.get(index));
+
+            Course  c = courses.get(index);
+            int grade = c.getGrade();
+            if(grade >= 90 ){
+                gpaPoints += 4;
             }
-
-            student.addCourse(c);
+                
             
-        }
-
     }
+
+    
 
     public void removeCourse(){
 
     }
+
+    public 
 
     public String toString(){
         return ("Name: " + name + "\nGrade Level: " + gradeLevel + "\nGPA:" + GPA);

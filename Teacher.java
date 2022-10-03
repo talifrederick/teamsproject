@@ -4,12 +4,11 @@ import java.util.ArrayList;
 public class Teacher implements Serializable {
     private String name;
     private int years;
-    private ArrayList classes;
+    
 
-    public Teacher( String name, int years, ArrayList classes){
+    public Teacher( String name, int years){
         this.name = name;
         this.years = years;
-        this.classes = classes;
 
     }
 
@@ -29,21 +28,7 @@ public class Teacher implements Serializable {
         return years;
     }
 
-    public void addCourse(ans){
-        System.out.println("Pick a class");
-        listCourses();
-        System.out.println("Choice:");
-        ans = sc.nextInt();
-        sc.nextLine();
-        if (ans> -1 && ans < courses.size()){
-            Course c = courses.get(ans).clone();
-         
-
-            teacher.addCourse(c);
-            
-        }
-
-    }
+    
 
 
 
