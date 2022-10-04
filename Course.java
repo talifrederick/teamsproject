@@ -59,8 +59,11 @@ public class Course implements Serializable, Cloneable{
         return grade;
     }
 
-    public boolean Current(){
-        return current = 
+    public boolean getCurrent(){
+        return current ;
+    }
+    public void setCurrent(boolean b){
+        current = b;
     }
 
     public String toString(){

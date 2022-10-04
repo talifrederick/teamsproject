@@ -76,12 +76,43 @@ public class TEAMS{
                 System.out.println("Subject: ");
                 String name = sc.nextLine();
                 System.out.println("Name of Teacher: ");
-                String teacherName = sc.nextLine()
+                String teacherName = sc.nextLine();
                 
 
             }
 
             if(ans==4){
+                System.out.println("1. Add course");
+                System.out.println("2. Edit Course");
+                System.out.println("");
+
+                if(ans ==1){
+                        System.out.println("Pick a class");
+                        for(int i =0; i < courses.size(); i ++){
+                            System.out.println("Choice:");
+                            ans = sc.nextInt();
+                            sc.nextLine();
+                            if (ans> -1 && ans < courses.size()){
+                                Course c = courses.get(ans).clone();
+                                System.out.println("Enter grade for the course:");
+                                int grade = sc.nextInt();
+                                c.setGrade(grade);
+                                sc.nextLine();
+                                System.out.println("Currently taking it (y/n)?");
+                                String yesNo = sc.nextLine();
+                                if (yesNo.equals("y")){
+                                    c.setCurrent(current:true);
+                                }
+                
+                                student.addCourse(c);
+                            
+                            }
+                
+                        }
+                }
+                        
+                        
+
 
                 
         
@@ -111,29 +142,6 @@ public class TEAMS{
 
     }
 
-    public void addCourse(ans){
-        System.out.println("Pick a class");
-        listCourses();
-        System.out.println("Choice:");
-        ans = sc.nextInt();
-        sc.nextLine();
-        if (ans> -1 && ans < courses.size()){
-            Course c = courses.get(ans).clone();
-            System.out.println("Enter grade for the course:");
-            int grade = sc.nextInt();
-            c.setGrade(grade);
-            sc.nextLine();
-            System.out.println("Currently taking it (y/n)?");
-            String yesNo = sc.nextLine();
-            if (yesNo.equals("y")){
-                c.setCurrent(current:true);
-            }
-
-            student.addCourse(c);
-            
-        }
-
-    }
 
     public static void addStudent(){
 
