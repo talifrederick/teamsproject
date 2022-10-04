@@ -51,25 +51,32 @@ public class Student implements Serializable {
             if(grade >= 90 ){
                 gpaPoints += 4;
             }
+            if(90> grade && grade >= 80){
+                gpaPoints += 3;
+            }
+            if(80> grade && grade >=70){
+                gpaPoints += 2;
+            }
+            if(70 > grade && grade >= 60){
+                gpaPoints += 1;
+            }
+
+            }
         }      
           return (double) gpaPoints;  
-    }
+    
+
 
     
 
-    public void removeCourse(){
-        int index = 0;
-        System.out.println(courses);
-        System.out.println("Enter index of the course: ");
-        while( index < courses.size() ){
-            Course item = courses.get(index);
-            if(item.() == courses.get(index) ){ //condition goes here
-                courses.remove(index); //remove item at that index
-            }else{ 
-                index++; //if condition not met, move on to the next element
-            }
-        }
+    public void removeCourse(Course c){
+        courses.remove(c);
+
       
+    }
+
+    public void addCourse(Course c){
+        courses.add(c);
     }
     
 
@@ -81,9 +88,11 @@ public class Student implements Serializable {
         return ("Name: " + name + "\nGrade Level: " + gradeLevel + "\nGPA:" + GPA);
     }
 
+}
+
 
 
  
 
     
-}
+

@@ -59,17 +59,30 @@ public class TEAMS{
                 
             }
             if(ans==2){
-                addTeacher();
+                System.out.println("Add Teacher");
+                System.out.println("Name of Teacher:");
+                String name = sc.nextLine();
+                System.out.println("Years of experience: ");
+                int years = sc.nextInt();
+                sc.nextLine();
+
+                Teacher newTeacher = new Teacher(name, years);
+                teachers.add(newTeacher);
                 
             }
 
             if(ans==3){
                 addCourse();
+                System.out.println("Subject: ");
+                String name = sc.nextLine();
+                System.out.println("Name of Teacher: ");
+                String teacherName = sc.nextLine()
                 
 
             }
 
             if(ans==4){
+
                 
         
 
@@ -156,6 +169,15 @@ public class TEAMS{
         fis.close();
         return o;
     }
+// remove course in edit student option
+    /* ArrayList<Course>  courses student.getCourses();
+    *print("Which course");
+     * for( courses)
+     * }
+     * int choice = nextInt()]
+     * Course c = courses.get(choice);
+     * student.removeCourse(c);
+     */
 
 
 }
