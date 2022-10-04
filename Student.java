@@ -8,6 +8,13 @@ public class Student implements Serializable {
     private ArrayList <Course> courses;
     //private String favoriteTeacher;
 
+    public static void main(Course[] args) {
+        ArrayList<Course> courses = new ArrayList<Course>(); //Empty ArrayList of Strings created
+
+
+    }
+
+
     public Student(String name, int grade){
         this.name = name;
         gradeLevel = grade;
@@ -44,15 +51,29 @@ public class Student implements Serializable {
             if(grade >= 90 ){
                 gpaPoints += 4;
             }
-                
-            
+        }      
+          return (double) gpaPoints;  
     }
 
     
 
     public void removeCourse(){
-
+        int index = 0;
+        System.out.println(courses);
+        System.out.println("Enter index of the course: ");
+        while( index < courses.size() ){
+            Course item = courses.get(index);
+            if(item.() == courses.get(index) ){ //condition goes here
+                courses.remove(index); //remove item at that index
+            }else{ 
+                index++; //if condition not met, move on to the next element
+            }
+        }
+      
     }
+    
+
+    
 
     public 
 
