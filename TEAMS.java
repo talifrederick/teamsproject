@@ -46,7 +46,7 @@ public class TEAMS{
             System.out.println("4: Edit Student");
             System.out.println("5: List Students" );
             System.out.println("6: List Courses");
-            System.out.println("7: Search for sostudent");
+            System.out.println("7: Search for student");
             System.out.println("8: Exit");
             System.out.println();
             System.out.println("Choice: ");
@@ -55,12 +55,19 @@ public class TEAMS{
 
         
             if(ans== 1){
-                addStudent();
+                System.out.println("Enter Student name: ");
+                String name = sc.nextLine();
+                System.out.println("Enter Grade Level:");
+                int gradeLevel = sc.nextInt();
+                sc.nextLine();
+
+                Student newStudent = new Student(name, gradeLevel);
+                students.add(newStudent);
                 
             }
             if(ans==2){
-                System.out.println("Add Teacher");
-                System.out.println("Name of Teacher:");
+                
+                System.out.println("Enter teacher name:");
                 String name = sc.nextLine();
                 System.out.println("Years of experience: ");
                 int years = sc.nextInt();
@@ -72,44 +79,82 @@ public class TEAMS{
             }
 
             if(ans==3){
-                addCourse();
-                System.out.println("Subject: ");
+               
+                System.out.println("Enter Subject: ");
                 String name = sc.nextLine();
-                System.out.println("Name of Teacher: ");
-                String teacherName = sc.nextLine();
+                ArrayList<Teacher>  teachers;
+                System.out.println("Pick a Teacher: ");
+                Teacher teacherName = sc.nextLine();
+                sc.nextLine();
+
+                Course newCourse = new Course(name, teacherName );
+                courses.add(newCourse);
                 
 
             }
 
             if(ans==4){
-                System.out.println("1. Add course");
-                System.out.println("2. Edit Course");
-                System.out.println("");
+                ArrayList<Student> students;
+                System.out.println("Pick a student: ");
+                for(int index =0 ; index < students.size(); index++){
+                    students.get(index);
+                    if(ans> -1 && ans < students.size()){//how do i check the index to the student
+                        System.out.println("1: Modify name");
+                        System.out.println("2: Modify grade level");
+                        System.out.println("3: Add course");
+                        System.out.println("4. Remove Course");
 
-                if(ans ==1){
-                        System.out.println("Pick a class");
-                        for(int i =0; i < courses.size(); i ++){
-                            System.out.println("Choice:");
-                            ans = sc.nextInt();
-                            sc.nextLine();
-                            if (ans> -1 && ans < courses.size()){
-                                Course c = courses.get(ans).clone();
-                                System.out.println("Enter grade for the course:");
-                                int grade = sc.nextInt();
-                                c.setGrade(grade);
+                        if(ans ==1){
+                            System.out.println("Enter new name:");
+                            
+                        }
+
+                        if(ans==2){
+                            System.out.println("Enter new grade level:");
+                            //ans = 
+                        }
+
+                        if(ans ==3){
+                            System.out.println("Pick a class");
+                            ArrayList<Course> courses;
+                            for(int i =0; i < courses.size(); i ++){
+                                System.out.println("Choice:");
+                                ans = sc.nextInt();
                                 sc.nextLine();
-                                System.out.println("Currently taking it (y/n)?");
-                                String yesNo = sc.nextLine();
-                                if (yesNo.equals("y")){
-                                    c.setCurrent(current:true);
+                                if (ans> -1 && ans < courses.size()){
+                                    Course c = courses.get(ans).clone();
+                                    System.out.println("Enter grade for the course:");
+                                    int grade = sc.nextInt();
+                                    c.setGrade(grade);
+                                    sc.nextLine();
+                                    System.out.println("Currently taking it (y/n)?");
+                                    String yesNo = sc.nextLine();
+                                    if (yesNo.equals("y")){
+                                        c.setCurrent(current:true);
+                                    }
+                
+                                    students.add(newCourse);
+                            
                                 }
                 
-                                student.addCourse(c);
-                            
                             }
-                
+                    }    
+                        if(ans == 4){
+                            ArrayList<Course>  courses;
+                            students.getCourses();
+                            for( courses in Course){
+                                int choice = nextInt();
+                                Course c = courses.get(choice);
+                                students.removeCourse(c);
+                            }
+
                         }
-                }
+
+                    }
+              
+
+                    
+                
                         
                         
 
@@ -120,16 +165,27 @@ public class TEAMS{
             }
 
             if(ans == 5){
+                for(int index =0 ; index < students.size(); index++){
+                    System.out.println(students);
+                }
                 
 
             }
 
-            if(ans==6){
-                
+            if(ans==6){ // how do i print toString after 
+                for(int index =0 ; index < courses.size(); index++){
+                    System.out.println(courses);
+                } 
 
             }
 
             if(ans ==7){
+                System.out.println("Enter student name:");
+                for(int index =0 ; index < students.size(); index++){
+                    students.get(index);
+                    if(ans == students.index); //how do i check the index
+                }
+
                 
             }
 

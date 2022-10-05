@@ -61,10 +61,17 @@ public class Student implements Serializable {
                 gpaPoints += 1;
             }
 
-            }
+            
         }      
           return (double) gpaPoints;  
-    
+    }
+
+    public String getBestClass(){
+        for(int index =0 ; index < courses.size(); index++){ //not finished
+
+        }
+    }
+
 
 
     
@@ -82,7 +89,7 @@ public class Student implements Serializable {
 
     
 
-    public 
+    
 
     public String toString(){
         return ("Name: " + name + "\nGrade Level: " + gradeLevel + "\nGPA:" + GPA);
