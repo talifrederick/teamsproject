@@ -98,14 +98,21 @@ public class TEAMS{
                 System.out.println("Pick a student: ");
                 for(int index =0 ; index < students.size(); index++){
                     students.get(index);
-                    if(ans> -1 && ans < students.size()){//how do i check the index to the student
+                    if(ans> -1 && ans < students.size()){
                         System.out.println("1: Modify name");
                         System.out.println("2: Modify grade level");
                         System.out.println("3: Add course");
                         System.out.println("4. Remove Course");
 
                         if(ans ==1){
-                            System.out.println("Enter new name:");
+                            ArrayList<Student> students;
+                            System.out.println("Select student");
+                            for(int i =0; i < students.size(); i ++){
+                                if (ans> -1 && ans < courses.size())
+                                    ans = sc.nextInt();
+                                    System.out.println("Enter new name:");
+                                    // how do i replace with new name
+                            }
                             
                         }
 
@@ -130,10 +137,10 @@ public class TEAMS{
                                     System.out.println("Currently taking it (y/n)?");
                                     String yesNo = sc.nextLine();
                                     if (yesNo.equals("y")){
-                                        c.setCurrent(current:true);
+                                        c.setCurrent(true);
                                     }
                 
-                                    students.add(newCourse);
+                                    students.get(index).addCourse(c);
                             
                                 }
                 
@@ -166,24 +173,31 @@ public class TEAMS{
 
             if(ans == 5){
                 for(int index =0 ; index < students.size(); index++){
-                    System.out.println(students);
+                    System.out.println(index+ " " +students.get(index));
                 }
                 
 
             }
 
-            if(ans==6){ // how do i print toString after 
+            if(ans==6){ 
                 for(int index =0 ; index < courses.size(); index++){
-                    System.out.println(courses);
+                    System.out.println(index+" "+courses.get(index));
                 } 
 
             }
 
             if(ans ==7){
                 System.out.println("Enter student name:");
+                String search = sc.nextLine();
                 for(int index =0 ; index < students.size(); index++){
-                    students.get(index);
-                    if(ans == students.index); //how do i check the index
+                    Student s = students.get(index);
+                    if(s.getName().equals(search)){
+                        System.out.println(s.getName());
+
+                    } 
+                    else{
+                        System.out.println("student does not exist");
+                    }
                 }
 
                 
@@ -199,9 +213,7 @@ public class TEAMS{
     }
 
 
-    public static void addStudent(){
-
-    }
+}
 
     //#### DO NOT CHANGE THIS FUNCTION ####
     public static void saveData()throws Exception{

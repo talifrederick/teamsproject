@@ -67,9 +67,20 @@ public class Student implements Serializable {
     }
 
     public String getBestClass(){
-        for(int index =0 ; index < courses.size(); index++){ //not finished
+        int max = courses.get(0).getGrade();
+        int bestClass = -1;
+        for(int index =0 ; index < courses.size(); index++){
+            int grade = courses.get(index).getGrade();
+             if(grade> max){
+                max = grade;
+                bestClass = index;
+
+             }
+             
+
 
         }
+        return courses.get(bestClass);
     }
 
 
