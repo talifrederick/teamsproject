@@ -97,7 +97,13 @@ public class TEAMS{
                 ArrayList<Student> students;
                 System.out.println("Pick a student: ");
                 for(int index =0 ; index < students.size(); index++){
-                    students.get(index);
+                System.out.print(index+ " "+ students.get(index));
+                }
+                System.out.println("choice:");
+                int schoice =sc.nextInt();
+                Student student = students.get(schoice);
+
+                
                     if(ans> -1 && ans < students.size()){
                         System.out.println("1: Modify name");
                         System.out.println("2: Modify grade level");
@@ -105,26 +111,25 @@ public class TEAMS{
                         System.out.println("4. Remove Course");
 
                         if(ans ==1){
-                            ArrayList<Student> students;
-                            System.out.println("Select student");
-                            for(int i =0; i < students.size(); i ++){
-                                if (ans> -1 && ans < courses.size())
-                                    ans = sc.nextInt();
-                                    System.out.println("Enter new name:");
-                                    // how do i replace with new name
-                            }
+                            System.out.println("Enter new name");
+                            String name = sc.nextLine();
+                            student.setName(name);
                             
                         }
 
                         if(ans==2){
                             System.out.println("Enter new grade level:");
-                            //ans = 
+                            int gradeLevel = sc.nextInt();
+                            student.setGradeLevel(gradeLevel);
+
                         }
 
                         if(ans ==3){
                             System.out.println("Pick a class");
-                            ArrayList<Course> courses;
+                            ArrayList<Course> courses = student.getCourses();
                             for(int i =0; i < courses.size(); i ++){
+                                System.out.println(i +" "+ courses.get(i));
+                            }
                                 System.out.println("Choice:");
                                 ans = sc.nextInt();
                                 sc.nextLine();
@@ -140,20 +145,26 @@ public class TEAMS{
                                         c.setCurrent(true);
                                     }
                 
-                                    students.get(index).addCourse(c);
+                                    student.addCourse(c);
                             
                                 }
                 
-                            }
+                            
                     }    
                         if(ans == 4){
                             ArrayList<Course>  courses;
-                            students.getCourses();
-                            for( courses in Course){
-                                int choice = nextInt();
-                                Course c = courses.get(choice);
-                                students.removeCourse(c);
+                            courses = student.getCourses();
+                            int i =0;
+                            for(Course c: courses){
+                                System.out.println(i +" "+courses);
+                                i++;
                             }
+                            System.out.println("Choice:");
+                            ans = sc.nextInt();
+                            sc.nextLine();
+                            student.removeCourse(courses.get(ans));
+
+
 
                         }
 
@@ -213,7 +224,7 @@ public class TEAMS{
     }
 
 
-}
+
 
     //#### DO NOT CHANGE THIS FUNCTION ####
     public static void saveData()throws Exception{
@@ -245,15 +256,8 @@ public class TEAMS{
         fis.close();
         return o;
     }
-// remove course in edit student option
-    /* ArrayList<Course>  courses student.getCourses();
-    *print("Which course");
-     * for( courses)
-     * }
-     * int choice = nextInt()]
-     * Course c = courses.get(choice);
-     * student.removeCourse(c);
-     */
+
+     
 
 
 }

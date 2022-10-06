@@ -65,8 +65,14 @@ public class Student implements Serializable {
         }      
           return (double) gpaPoints;  
     }
+    public ArrayList<Course> getCourses(){
+        return courses;
+    }
+    public Course getBestClass(){
+        if(courses.size()==0){
+            return null;
+        }
 
-    public String getBestClass(){
         int max = courses.get(0).getGrade();
         int bestClass = -1;
         for(int index =0 ; index < courses.size(); index++){
