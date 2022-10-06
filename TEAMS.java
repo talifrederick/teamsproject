@@ -81,30 +81,34 @@ public class TEAMS{
             if(ans==3){
                
                 System.out.println("Enter Subject: ");
-                String name = sc.nextLine();
-                ArrayList<Teacher>  teachers;
+                String subject = sc.nextLine();
                 System.out.println("Pick a Teacher: ");
-                Teacher teacherName = sc.nextLine();
+                for(int i=0; i<teachers.size();i++){
+                    System.out.println(i+" "+teachers.get(i));
+                }
+                int choice = sc.nextInt();
                 sc.nextLine();
+                Teacher t = teachers.get(choice);
 
-                Course newCourse = new Course(name, teacherName );
+
+                Course newCourse = new Course(subject, t);
                 courses.add(newCourse);
                 
 
             }
 
             if(ans==4){
-                ArrayList<Student> students;
+     
                 System.out.println("Pick a student: ");
                 for(int index =0 ; index < students.size(); index++){
-                System.out.print(index+ " "+ students.get(index));
+                    System.out.print(index+ " "+ students.get(index));
                 }
                 System.out.println("choice:");
                 int schoice =sc.nextInt();
                 Student student = students.get(schoice);
 
                 
-                    if(ans> -1 && ans < students.size()){
+                    if(schoice> -1 && schoice < students.size()){
                         System.out.println("1: Modify name");
                         System.out.println("2: Modify grade level");
                         System.out.println("3: Add course");
@@ -215,6 +219,11 @@ public class TEAMS{
             }
 
             if(ans==8){
+                try{
+
+                    saveData();
+                    
+                    }catch(Exception e){}
                 
             }
 

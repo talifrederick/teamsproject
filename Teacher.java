@@ -28,7 +28,10 @@ public class Teacher implements Serializable {
         return years;
     }
 
-    
+    public String toString(){
+        return( name);
+    }
+
 
 
 
