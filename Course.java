@@ -46,7 +46,9 @@ public class Course implements Serializable, Cloneable{
         this.teacher = teacher;
 
     }
-
+    public int getGrade(){
+        return grade;
+    }
     public void setGrade(int grade){
         while (grade > 0 && grade <= 100){
             this.grade = grade;
@@ -55,9 +57,7 @@ public class Course implements Serializable, Cloneable{
         }
     }
 
-    public int getGrade(){
-        return grade;
-    }
+    
 
     public boolean getCurrent(){
         return current ;

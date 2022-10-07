@@ -114,6 +114,11 @@ public class TEAMS{
                         System.out.println("3: Add course");
                         System.out.println("4. Remove Course");
 
+                        System.out.println("Choice: ");
+                        ans = sc.nextInt();
+                        sc.nextLine();
+
+
                         if(ans ==1){
                             System.out.println("Enter new name");
                             String name = sc.nextLine();
@@ -130,7 +135,7 @@ public class TEAMS{
 
                         if(ans ==3){
                             System.out.println("Pick a class");
-                            ArrayList<Course> courses = student.getCourses();
+                            //ArrayList<Course> courses = student.getCourses();
                             for(int i =0; i < courses.size(); i ++){
                                 System.out.println(i +" "+ courses.get(i));
                             }
@@ -154,13 +159,14 @@ public class TEAMS{
                                 }
                 
                             
-                    }    
-                        if(ans == 4){
-                            ArrayList<Course>  courses;
-                            courses = student.getCourses();
-                            int i =0;
-                            for(Course c: courses){
-                                System.out.println(i +" "+courses);
+                        }    
+                        if(ans == 4){ // doesnt work
+                            //ArrayList<Course>  courses;
+                            //courses = student.getCourses();
+                           
+                            for(int i =0; i < courses.size(); i ++){
+                                System.out.println(i +" "+ courses);
+                                
                                 i++;
                             }
                             System.out.println("Choice:");
@@ -207,7 +213,7 @@ public class TEAMS{
                 for(int index =0 ; index < students.size(); index++){
                     Student s = students.get(index);
                     if(s.getName().equals(search)){
-                        System.out.println(s.getName());
+                        System.out.println(students.get(index));
 
                     } 
                     else{
