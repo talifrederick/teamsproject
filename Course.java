@@ -50,11 +50,8 @@ public class Course implements Serializable, Cloneable{
         return grade;
     }
     public void setGrade(int grade){
-        while (grade > 0 && grade <= 100){
-            this.grade = grade;
+        this.grade = grade;
             
-
-        }
     }
 
     

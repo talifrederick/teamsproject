@@ -144,10 +144,13 @@ public class TEAMS{
                                 sc.nextLine();
                                 if (ans> -1 && ans < courses.size()){
                                     Course c = courses.get(ans).clone();
-                                    System.out.println("Enter grade for the course:");
-                                    int grade = sc.nextInt();
+                                    int grade = -1;
+                                    while(grade < 0 || grade > 100 ){
+                                        System.out.println("Enter grade for the course:");
+                                        grade = sc.nextInt();
+                                        sc.nextLine();
+                                    }
                                     c.setGrade(grade);
-                                    sc.nextLine();
                                     System.out.println("Currently taking it (y/n)?");
                                     String yesNo = sc.nextLine();
                                     if (yesNo.equals("y")){

@@ -39,11 +39,11 @@ public class Student implements Serializable {
         return grade;
     }
 
-    public double calculateGPA(){
+    public Object calculateGPA(){
         double gpaPoints = 0;
-        //if(courses.size()==0){
-           // return null;
-        //}
+        if(courses.size()==0){
+            return null;
+        }
 
 
         for(int index =0 ; index < courses.size(); index++){
