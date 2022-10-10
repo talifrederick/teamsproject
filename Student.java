@@ -39,6 +39,11 @@ public class Student implements Serializable {
         return grade;
     }
 
+   // public void setCalculateGPA(double gpa){
+      //  calculateGPA = gpa;
+
+    //}
+
     public Object calculateGPA(){
         double gpaPoints = 0;
         if(courses.size()==0){
@@ -76,20 +81,19 @@ public class Student implements Serializable {
             return null;
         }
 
-        int max = courses.get(0).getGrade();
-        int bestClass = -1;
+        Course best = courses.get(0);
         for(int index =0 ; index < courses.size(); index++){
-            int grade = courses.get(index).getGrade();
-             if(grade> max){
-                max = grade;
-                bestClass = index;
+            Course c = courses.get(index);
+            if(c.getGrade()> best.getGrade()){
+                best=c;
+            
 
              }
              
 
 
         }
-        return courses.get(bestClass);
+        return best;
     }
 
 
@@ -112,7 +116,15 @@ public class Student implements Serializable {
     
 
     public String toString(){
-        return ("Name: " + name + " Grade Level: " + gradeLevel + " GPA:" + GPA);
+        if(getBestClass()== null){
+            return "Name: " + name + " Grade Level: " + gradeLevel + " GPA:" + calculateGPA();
+
+        }
+
+        else{
+            return "Name: " + name+ " Grade Level:" + gradeLevel + " GPA: " + calculateGPA() + " Best Class: " + getBestClass();
+        }
+        
     }
 
 }
